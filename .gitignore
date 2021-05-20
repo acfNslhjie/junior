@@ -1,0 +1,8 @@
+/.settings
+/bak/
+/frameworks/
+/publish/
+/runtime/
+/tools/
+/*.iml
+/.idea
