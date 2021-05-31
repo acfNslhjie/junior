@@ -74,8 +74,14 @@ Hand = cc.Class.extend({
 	    	obj.getChildByTag(TAG_HAND_LEFT1).runAction(seq1);
 		}
 		else if(num==2){
-			obj.getChildByTag(TAG_HAND_RIGHT).runAction(action);
-			obj.getChildByTag(TAG_HAND_RIGHT1).runAction(action.copy());
+			var seq = cc.sequence(action,cc.callFunc(function(){
+				obj.getChildByTag(TAG_HAND_RIGHT).removeFromParent();
+			},this));
+			var seq1 = cc.sequence(action.copy(),cc.callFunc(function(){
+				obj.getChildByTag(TAG_HAND_RIGHT1).removeFromParent();
+			},this));
+			obj.getChildByTag(TAG_HAND_RIGHT).runAction(seq);
+			obj.getChildByTag(TAG_HAND_RIGHT1).runAction(seq1);
 			
 		}
 		

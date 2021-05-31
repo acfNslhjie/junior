@@ -120,13 +120,36 @@ Shiguan = cc.Node.extend({
 		switch(p.getTag()){	
 		case TAG_SHIGUAN1:
 			if(action==ACTION_DO1){
-				this.shiguanmove(cc.p(520,370),cc.p(515,220),-10,1.5);	
-				this.watermove(TAG_BEAKER1_NODE,3,10);
+				this.shiguanmove(cc.p(520,370),cc.p(515,220),-10,1);	
+				this.watermove(TAG_BEAKER1_NODE,2.5,10);
 			}else{
+//				var beakernode= this.getParent().getChildByTag(TAG_BEAKER1_NODE);
+//				var beaker1 = beakernode.getChildByTag(TAG_BEAKER_WATER).getChildByTag(TAG_WATER);
+//				this.watermove(TAG_BEAKER1_NODE,0.5,-10);
+//				
+//				var move = cc.moveTo(1,cc.p(550,370));
+//				var rotate = cc.rotateTo(1,0);
+//				var spawn = cc.spawn(move,rotate);
+//				var move1 = cc.moveTo(1.5,cc.p(140,515));
+//				var move2= cc.moveBy(1,cc.p(0,-135));
+//				var seq = cc.sequence(cc.callFunc(function(){
+//					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5);
+//					var water = this.getChildByTag(TAG_SHIGUAN1).getChildByTag(TAG_WATER1);
+//					water.runAction(cc.rotateTo(1,0));					
+//				},this),spawn,move1,cc.callFunc(function(){
+//					this.setLocalZOrder(10);
+//					hand.removehand(this,1,1);
+//					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5,40);
+//				},this),move2,cc.callFunc(function(){
+//					this.flowNext();
+//					hand.removehand(this,1,1);
+//					beakernode.removeFromParent(true);
+//				},this));
+//				this.runAction(seq);	
 				var beakernode= this.getParent().getChildByTag(TAG_BEAKER1_NODE);
 				var beaker1 = beakernode.getChildByTag(TAG_BEAKER_WATER).getChildByTag(TAG_WATER);
 				this.watermove(TAG_BEAKER1_NODE,0.5,-10);
-				
+
 				var move = cc.moveTo(1,cc.p(550,370));
 				var rotate = cc.rotateTo(1,0);
 				var spawn = cc.spawn(move,rotate);
@@ -136,24 +159,44 @@ Shiguan = cc.Node.extend({
 					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5);
 					var water = this.getChildByTag(TAG_SHIGUAN1).getChildByTag(TAG_WATER1);
 					water.runAction(cc.rotateTo(1,0));					
-				},this),spawn,move1,cc.callFunc(function(){
-					this.setLocalZOrder(10);
-					hand.removehand(this,1,1);
-					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5,40);
-				},this),move2,cc.callFunc(function(){
+				},this),spawn,cc.callFunc(function(){
 					this.flowNext();
-					hand.removehand(this,1,1);
+				//	hand.removehand(this,1,1);
 					beakernode.removeFromParent(true);
 				},this));
-				this.runAction(seq);				
+				this.runAction(seq);	
 			}
 			
 			break;
 		case TAG_SHIGUAN2:
 			if (action==ACTION_DO1){
-				this.shiguanmove(cc.p(720,370),cc.p(715,220),-10,2);
-				this.watermove(TAG_BEAKER2_NODE,3.5,10);
+				this.shiguanmove(cc.p(720,370),cc.p(715,220),-10,1.5);
+				this.watermove(TAG_BEAKER2_NODE,3,10);
 			}else{
+//				var beakernode= this.getParent().getChildByTag(TAG_BEAKER2_NODE);
+//				var beaker1 = beakernode.getChildByTag(TAG_BEAKER_WATER).getChildByTag(TAG_WATER);
+//				this.watermove(TAG_BEAKER2_NODE,0.5,-10);
+//
+//				var move = cc.moveTo(1.5,cc.p(750,370));
+//				var rotate = cc.rotateTo(1,0);
+//				var spawn = cc.spawn(move,rotate);
+//				var move1 = cc.moveTo(1.5,cc.p(180,515));
+//				var move2= cc.moveBy(1,cc.p(0,-135));
+//				var seq = cc.sequence(cc.callFunc(function(){
+//					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5);
+//					var water = this.getChildByTag(TAG_SHIGUAN2).getChildByTag(TAG_WATER2);
+//					water.runAction(cc.rotateTo(1,0));					
+//				},this),spawn,move1,cc.callFunc(function(){
+//					this.setLocalZOrder(10);
+//					hand.removehand(this,1,1);
+//					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5,40);
+//				},this),move2,cc.callFunc(function(){
+//					this.flowNext();
+//					hand.removehand(this,1,1);
+//					beakernode.removeFromParent(true);
+//				},this));
+//				this.runAction(seq);
+				
 				var beakernode= this.getParent().getChildByTag(TAG_BEAKER2_NODE);
 				var beaker1 = beakernode.getChildByTag(TAG_BEAKER_WATER).getChildByTag(TAG_WATER);
 				this.watermove(TAG_BEAKER2_NODE,0.5,-10);
@@ -161,19 +204,15 @@ Shiguan = cc.Node.extend({
 				var move = cc.moveTo(1,cc.p(750,370));
 				var rotate = cc.rotateTo(1,0);
 				var spawn = cc.spawn(move,rotate);
-				var move1 = cc.moveTo(1.5,cc.p(180,515));
+				var move1 = cc.moveTo(2,cc.p(180,515));
 				var move2= cc.moveBy(1,cc.p(0,-135));
 				var seq = cc.sequence(cc.callFunc(function(){
 					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5);
 					var water = this.getChildByTag(TAG_SHIGUAN2).getChildByTag(TAG_WATER2);
 					water.runAction(cc.rotateTo(1,0));					
-				},this),spawn,move1,cc.callFunc(function(){
-					this.setLocalZOrder(10);
-					hand.removehand(this,1,1);
-					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5,40);
-				},this),move2,cc.callFunc(function(){
+				},this),spawn,cc.callFunc(function(){
 					this.flowNext();
-					hand.removehand(this,1,1);
+					//hand.removehand(this,1,1);
 					beakernode.removeFromParent(true);
 				},this));
 				this.runAction(seq);
@@ -182,14 +221,38 @@ Shiguan = cc.Node.extend({
 			break;
 		case TAG_SHIGUAN3:
 			if(action==ACTION_DO1){
-				this.shiguanmove(cc.p(920,370),cc.p(915,220),-10,2.5);
-				this.watermove(TAG_BEAKER3_NODE,4,10);
+				this.shiguanmove(cc.p(920,370),cc.p(915,220),-10,2);
+				this.watermove(TAG_BEAKER3_NODE,3.5,10);
 			}else{
+//				var beakernode= this.getParent().getChildByTag(TAG_BEAKER3_NODE);
+//				var beaker1 = beakernode.getChildByTag(TAG_BEAKER_WATER).getChildByTag(TAG_WATER);
+//				this.watermove(TAG_BEAKER3_NODE,0.5,-10);
+//
+//				var move = cc.moveTo(1,cc.p(950,370));
+//				var rotate = cc.rotateTo(1,0);
+//				var spawn = cc.spawn(move,rotate);
+//				var move1 = cc.moveTo(2.5,cc.p(220,515));
+//				var move2= cc.moveBy(1,cc.p(0,-135));
+//				var seq = cc.sequence(cc.callFunc(function(){
+//					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5);
+//					var water = this.getChildByTag(TAG_SHIGUAN3).getChildByTag(TAG_WATER3);
+//					water.runAction(cc.rotateTo(1,0));					
+//				},this),spawn,move1,cc.callFunc(function(){
+//					this.setLocalZOrder(10);
+//					hand.removehand(this,1,1);
+//					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5,40);
+//				},this),move2,cc.callFunc(function(){
+//					this.flowNext();
+//					hand.removehand(this,1,1);
+//					beakernode.removeFromParent(true);
+//				},this));
+//				this.runAction(seq);
+				
 				var beakernode= this.getParent().getChildByTag(TAG_BEAKER3_NODE);
 				var beaker1 = beakernode.getChildByTag(TAG_BEAKER_WATER).getChildByTag(TAG_WATER);
 				this.watermove(TAG_BEAKER3_NODE,0.5,-10);
 
-				var move = cc.moveTo(1,cc.p(950,370));
+				var move = cc.moveTo(2,cc.p(950,370));
 				var rotate = cc.rotateTo(1,0);
 				var spawn = cc.spawn(move,rotate);
 				var move1 = cc.moveTo(1.5,cc.p(220,515));
@@ -198,13 +261,9 @@ Shiguan = cc.Node.extend({
 					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5);
 					var water = this.getChildByTag(TAG_SHIGUAN3).getChildByTag(TAG_WATER3);
 					water.runAction(cc.rotateTo(1,0));					
-				},this),spawn,move1,cc.callFunc(function(){
-					this.setLocalZOrder(10);
-					hand.removehand(this,1,1);
-					hand.addlefthand(this,"#hand/hand_left",cc.p(-25,80),0.5,40);
-				},this),move2,cc.callFunc(function(){
+				},this),spawn,cc.callFunc(function(){
 					this.flowNext();
-					hand.removehand(this,1,1);
+					//hand.removehand(this,1,1);
 					beakernode.removeFromParent(true);
 				},this));
 				this.runAction(seq);
@@ -213,8 +272,8 @@ Shiguan = cc.Node.extend({
 			break;
 		case TAG_SHIGUAN4:
 			if(action==ACTION_DO1){
-				this.shiguanmove(cc.p(585,370),cc.p(590,220),10,1.5);		
-				this.watermove(TAG_BEAKER1_NODE,3,10);
+				this.shiguanmove(cc.p(585,370),cc.p(590,220),10,1);		
+				this.watermove(TAG_BEAKER1_NODE,2.5,10);
 			}else{
 				this.watermove(TAG_BEAKER1_NODE,0,-20);//烧杯水位下降
 				var shiguan1 = this.getParent().getChildByTag(TAG_SHIGUAN1_NODE);
@@ -269,8 +328,8 @@ Shiguan = cc.Node.extend({
 			break;		
 		case TAG_SHIGUAN5:
 			if(action==ACTION_DO1){
-				this.shiguanmove(cc.p(785,370),cc.p(790,220),10,2);		
-				this.watermove(TAG_BEAKER2_NODE,3.5,10);
+				this.shiguanmove(cc.p(785,370),cc.p(790,220),10,1.5);		
+				this.watermove(TAG_BEAKER2_NODE,3,10);
 			}else {
 				this.watermove(TAG_BEAKER2_NODE,0,-20);//烧杯水位下降
 				var shiguan2 = this.getParent().getChildByTag(TAG_SHIGUAN2_NODE);
@@ -328,8 +387,8 @@ Shiguan = cc.Node.extend({
 			var clock = this.getParent().clock;
 			clock.setSpriteFrame("tool/clock.png");
 			if(action==ACTION_DO1){
-				this.watermove(TAG_BEAKER3_NODE,4,10);
-				this.shiguanmove(cc.p(985,370),cc.p(990,220),10,2.5,4);		
+				this.watermove(TAG_BEAKER3_NODE,3.5,10);
+				this.shiguanmove(cc.p(985,370),cc.p(990,220),10,2,4);		
 				var clock = this.getParent().clock;
 				clock.setSpriteFrame("tool/clock.png");
 				var seq = cc.sequence(cc.delayTime(4.5),cc.callFunc(function(){

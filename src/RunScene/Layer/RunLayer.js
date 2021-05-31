@@ -75,6 +75,7 @@ var RunLayer = cc.Layer.extend({
 //		this.loadInLib(drop, pos,cc.p(640,310));
 //	},
 	loadCylinder:function(pos){
+		
 		var action = gg.flow.flow.action;
 		if(action == ACTION_DO1){
 			var cylinder = new Cylinder(this,action);
@@ -101,10 +102,12 @@ var RunLayer = cc.Layer.extend({
 		this.loadInLib(drop, pos, cc.p(900,400));
 	},
 	loadDrop3:function(pos){
+		this.lib.close();
 		var drop = new Drop3(this);
-		this.loadInLib(drop, pos, cc.p(750,120));
+		this.loadInLib(drop, pos, cc.p(1100,350));
 	},
-	loadShuiyu:function(pos){			
+	loadShuiyu:function(pos){	
+		this.lib.close();
 		var beaker1 = new Beaker(this,TAG_BEAKER1_NODE);
 		beaker1.setPosition(pos);
 		var seq = cc.sequence(cc.moveTo(1,cc.p(550,150)),cc.callFunc(function(){
