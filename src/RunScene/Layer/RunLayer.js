@@ -95,22 +95,27 @@ var RunLayer = cc.Layer.extend({
 	},
 	loadDrop1:function(pos){
           var drop = new Drop1(this);
-          this.loadInLib(drop, pos, cc.p(900,400));
+          this.loadInLib(drop, pos, cc.p(900,400),0.5);
 	},
 	loadDrop2:function(pos){
 		var drop = new Drop2(this);
-		this.loadInLib(drop, pos, cc.p(900,400));
+		this.loadInLib(drop, pos, cc.p(900,400),0.5);
 	},
 	loadDrop3:function(pos){
-		this.lib.close();
+		
 		var drop = new Drop3(this);
-		this.loadInLib(drop, pos, cc.p(1100,350));
+		this.loadInLib(drop, pos, cc.p(1100,350),0.5);
+		var seq = cc.sequence(cc.delayTime(0.5),cc.callFunc(function(){
+			this.lib.close();	
+		},this));
+		drop.runAction(seq);
 	},
 	loadShuiyu:function(pos){	
-		this.lib.close();
+		
 		var beaker1 = new Beaker(this,TAG_BEAKER1_NODE);
 		beaker1.setPosition(pos);
 		var seq = cc.sequence(cc.moveTo(1,cc.p(550,150)),cc.callFunc(function(){
+			this.lib.close();
 			this.flowNext();
 		},this));
 		beaker1.runAction(seq);

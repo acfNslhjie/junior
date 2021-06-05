@@ -50,18 +50,18 @@ Cylinder = cc.Node.extend({
 				var shiguannode = this.getParent().getChildByTag(TAG_SHIGUAN1_NODE);
 				hand.addlefthand(shiguannode,"#hand/hand_left",cc.p(-25,100),0.5,40);
 				var move1 = cc.moveBy(1,cc.p(0,135));
-				var move2 = cc.moveTo(2,cc.p(550,220));
-				var rotate1 = cc.rotateTo(2.5,10);
+				var move2 = cc.moveTo(1.5,cc.p(550,220));
+				var rotate1 = cc.rotateTo(1.5,10);
 				var spawn = cc.spawn(move2,rotate1);
-				var move3 = cc.moveTo(2,cc.p(140,515));
-				var rotate2 = cc.rotateTo(2.5,0);
+				var move3 = cc.moveTo(1.5,cc.p(140,515));
+				var rotate2 = cc.rotateTo(1.5,0);
 				var spawn2 = cc.spawn(move3,rotate2);
 				var move4 = cc.moveBy(1,cc.p(0,-135));
 				var seq1 = cc.sequence(move1,cc.callFunc(function(){
 					shiguannode.setLocalZOrder(11);
 					hand.removehand(shiguannode,1,1);
 					hand.addlefthand(shiguannode,"#hand/hand_left",cc.p(-25,80),0.6);
-				},this),spawn,cc.delayTime(2),spawn2,cc.callFunc(function(){
+				},this),spawn,cc.delayTime(3),spawn2,cc.callFunc(function(){
 					shiguannode.setLocalZOrder(10);
 					hand.removehand(shiguannode,1,1);
 					hand.addlefthand(shiguannode,"#hand/hand_left",cc.p(-25,80),0.5,40);
@@ -88,18 +88,18 @@ Cylinder = cc.Node.extend({
 				var shiguannode = this.getParent().getChildByTag(TAG_SHIGUAN4_NODE);
 				hand.addlefthand(shiguannode,"#hand/hand_left",cc.p(-25,100),0.5,40);
 				var move1 = cc.moveBy(1,cc.p(0,135));
-				var move2 = cc.moveTo(2,cc.p(550,220));
-				var rotate1 = cc.rotateTo(2.5,10);
+				var move2 = cc.moveTo(1.5,cc.p(550,220));
+				var rotate1 = cc.rotateTo(1.5,10);
 				var spawn = cc.spawn(move2,rotate1);
-				var move3 = cc.moveTo(2,cc.p(260,515));
-				var rotate2 = cc.rotateTo(2.5,0);
+				var move3 = cc.moveTo(1.5,cc.p(260,515));
+				var rotate2 = cc.rotateTo(1.5,0);
 				var spawn2 = cc.spawn(move3,rotate2);
 				var move4 = cc.moveBy(1,cc.p(0,-135));
 				var seq1 = cc.sequence(move1,cc.callFunc(function(){
 					shiguannode.setLocalZOrder(11);
 					hand.removehand(shiguannode,1,1);
 					hand.addlefthand(shiguannode,"#hand/hand_left",cc.p(-25,80),0.6);
-				},this),spawn,cc.delayTime(2),spawn2,cc.callFunc(function(){
+				},this),spawn,cc.delayTime(3),spawn2,cc.callFunc(function(){
 					shiguannode.setLocalZOrder(10);
 					hand.removehand(shiguannode,1,1);
 					hand.addlefthand(shiguannode,"#hand/hand_left",cc.p(-25,80),0.5,40);

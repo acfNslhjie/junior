@@ -252,7 +252,7 @@ Shiguan = cc.Node.extend({
 				var beaker1 = beakernode.getChildByTag(TAG_BEAKER_WATER).getChildByTag(TAG_WATER);
 				this.watermove(TAG_BEAKER3_NODE,0.5,-10);
 
-				var move = cc.moveTo(2,cc.p(950,370));
+				var move = cc.moveTo(1,cc.p(950,370));
 				var rotate = cc.rotateTo(1,0);
 				var spawn = cc.spawn(move,rotate);
 				var move1 = cc.moveTo(1.5,cc.p(220,515));
@@ -385,12 +385,12 @@ Shiguan = cc.Node.extend({
 			break;
 		case TAG_SHIGUAN6:
 			var clock = this.getParent().clock;
-			clock.setSpriteFrame("tool/clock.png");
+			clock.setSpriteFrame("tool/clock5.png");
 			if(action==ACTION_DO1){
 				this.watermove(TAG_BEAKER3_NODE,3.5,10);
 				this.shiguanmove(cc.p(985,370),cc.p(990,220),10,2,4);		
-				var clock = this.getParent().clock;
-				clock.setSpriteFrame("tool/clock.png");
+//				var clock = this.getParent().clock;
+//				clock.setSpriteFrame("tool/clock5.png");
 				var seq = cc.sequence(cc.delayTime(4.5),cc.callFunc(function(){
 					clock.doing();
 				},this),cc.delayTime(4),cc.callFunc(function(){

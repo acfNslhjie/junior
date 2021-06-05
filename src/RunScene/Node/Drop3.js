@@ -34,6 +34,7 @@ Drop3 = cc.Node.extend({
 	callback:function(p){
 		var action = gg.flow.flow.action;
 		var func = cc.callFunc(this.actionDone, this);	
+		func.retain();
 		switch(p.getTag()){	
 		case TAG_DROP:
 			p.setSpriteFrame("drop1.png");
@@ -180,9 +181,10 @@ Drop3 = cc.Node.extend({
 					hand.addlefthand(shiguannode,"#hand/hand_left",cc.p(-25,80),0.5,40);
 				},this),move2,cc.callFunc(function(){
 					var show = new ShowTip(ll.run,"1号和3号试管变蓝" +
-							                    "\n2号试管不变蓝",25,cc.p(550,300));
-					this.flowNext();
+							                    "\n2号试管不变蓝",25,cc.p(550,300));					
 					hand.removehand(shiguannode,1,1);
+				},this),cc.delayTime(2),cc.callFunc(function(){
+					this.flowNext();
 				},this));
 				shiguannode.runAction(seq);
 			}

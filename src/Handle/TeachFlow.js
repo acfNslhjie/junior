@@ -211,10 +211,9 @@ teach_flow = [
                 {tip:"在2号试管中添加1滴碘液",tag:[TAG_DROP_NODE,TAG_DROP],action:ACTION_DO2},
                 {tip:"取出3号试管",tag:[TAG_SHIGUAN3_NODE,TAG_SHIGUAN3],action:ACTION_DO2},
                 {tip:"在3号试管中添加1滴碘液",tag:[TAG_DROP_NODE,TAG_DROP],action:ACTION_DO3},
-//              
              
-         //     {tip:"往三只试管中分别加入1滴碘液，观察现象",tag:[TAG_DROP_NODE,TAG_DROP]},
-//   
+             
+   
            	  {tip:"恭喜过关",over:true}
 ];
 over = {tip:"恭喜过关"};

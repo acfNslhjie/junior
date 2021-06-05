@@ -9,11 +9,6 @@ Drop1 = cc.Node.extend({
 		var bottle = new Button(this, 9, TAG_BOTTLE, "#dianfen/1.png",this.callback);
 		var  lid  = new Button(this, 8, TAG_LID, "#lid.png",this.callback);
 		lid.setPosition(0,67);
-//		lid.setScale(1.7);
-//		var label = new cc.LabelTTF("碘溶液",gg.fontName,12);
-//		label.setColor(cc.color(0,0,0));
-//		label.setPosition(bottle.width*0.5,bottle.height*0.35);
-//		bottle.addChild(label, 11,TAG_LABEL);
 	},
 	genPoint:function(p,count,str){
 		count --;
@@ -57,9 +52,9 @@ Drop1 = cc.Node.extend({
 			var spawn = cc.spawn(rotate,move1);
             var seq = cc.sequence(move,spawn,cc.callFunc(function(){
             	var show = new ShowTip(ll.run,"注意瓶塞朝上",25,cc.p(1060,360));
-            	gg.flow.next();
-            	//this.flowNext();
-            }));	
+            	//gg.flow.next();
+            	this.flowNext();
+            },this));	
             p.runAction(seq);
 			break;
 		case TAG_BOTTLE:
@@ -81,14 +76,14 @@ Drop1 = cc.Node.extend({
 			this.runAction(seq);
 			
 		    var cylindernode = this.getParent().getChildByTag(TAG_CYLINDER_NODE);
-		    hand.addlefthand(cylindernode, "#hand/hand_left", cc.p(-20,50),0.6);
+		    hand.addlefthand(cylindernode, "#hand/hand_left", cc.p(-20,40),0.6);
 		    var rotate1 = cc.rotateTo(1,10);
 		    var rotate2 = cc.rotateTo(1,0);
 		    var seq1 = cc.sequence(cc.delayTime(1.2),rotate1,cc.delayTime(1),rotate2,cc.callFunc(function(){
 		    	
-		    //	this.flowNext();
-		    	gg.flow.next();
-		    }));
+		    	this.flowNext();
+		    //	gg.flow.next();
+		    },this));
 		    cylindernode.runAction(seq1);
 			break;
 		}
@@ -106,6 +101,18 @@ Drop1 = cc.Node.extend({
 			cylindernode.addChild(line,1,TAG_SHOW);
 			var seq = cc.sequence(cc.moveBy(1,cc.p(0,25)),cc.rotateTo(1,0));
 			line.runAction(seq);
+			
+			var shuiliu = new cc.Sprite("#flow_right.png");
+			shuiliu.setAnchorPoint(1, 1);
+			shuiliu.setScale(0);
+			shuiliu.setRotation(60);
+			shuiliu.setPosition(13, 113);
+			p.addChild(shuiliu);
+			var seq = cc.sequence(cc.scaleTo(0.5,1),cc.delayTime(0.8),cc.fadeTo(0.2,0),cc.callFunc(function(){
+				shuiliu.removeFromParent();
+			},this));
+			shuiliu.runAction(seq);
+			
 			break;
 		}
 	},

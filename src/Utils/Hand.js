@@ -67,7 +67,7 @@ Hand = cc.Class.extend({
 	       var seq = cc.sequence(action,cc.callFunc(function(){
 	    	   obj.getChildByTag(TAG_HAND_LEFT).removeFromParent();
 	       },this));
-	       var seq1 = cc.sequence(action.copy(),cc.callFunc(function(){
+	       var seq1 = cc.sequence(action.clone(),cc.callFunc(function(){
 	    	   obj.getChildByTag(TAG_HAND_LEFT1).removeFromParent();
 	       },this));
 	    	obj.getChildByTag(TAG_HAND_LEFT).runAction(seq);
@@ -77,7 +77,7 @@ Hand = cc.Class.extend({
 			var seq = cc.sequence(action,cc.callFunc(function(){
 				obj.getChildByTag(TAG_HAND_RIGHT).removeFromParent();
 			},this));
-			var seq1 = cc.sequence(action.copy(),cc.callFunc(function(){
+			var seq1 = cc.sequence(action.clone(),cc.callFunc(function(){
 				obj.getChildByTag(TAG_HAND_RIGHT1).removeFromParent();
 			},this));
 			obj.getChildByTag(TAG_HAND_RIGHT).runAction(seq);

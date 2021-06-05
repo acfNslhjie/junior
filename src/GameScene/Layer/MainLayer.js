@@ -6,10 +6,10 @@ TAG_H5 = 5;
 TAG_H6 = 6;
 var hJson = [{tag:TAG_H1,image:"prop1.png",name:"量筒"},
             {tag:TAG_H2,image:"prop2.png",name:"胶头滴管"},
-			{tag:TAG_H3,image:"prop3.png",name:"蒸发皿"},
-			{tag:TAG_H4,image:"prop4.png",name:"表面皿"},
+			{tag:TAG_H3,image:"prop3.png",name:"试管架"},
+			{tag:TAG_H4,image:"prop4.png",name:"火柴"},
 			{tag:TAG_H5,image:"prop5.png",name:"酒精灯"},
-			{tag:TAG_H6,image:"prop6.png",name:"洗耳球"}]
+			{tag:TAG_H6,image:"prop6.png",name:"药勺"}]
 var GameMainLayer = cc.Layer.extend({
 	curScore:0,
 	listTime:30,
