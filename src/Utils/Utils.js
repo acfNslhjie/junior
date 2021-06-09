@@ -81,6 +81,7 @@ var $ = {
 	},
 	runScene:function(scene){
 		cc.director.runScene(new cc.TransitionFade(gg.d_time, scene));
+		//AngelListener.regListener(scene);
 	},
 	randomSort:function (a, b) {
 		// 用Math.random()函数生成0~1之间的随机数与0.5比较，返回-1或1
